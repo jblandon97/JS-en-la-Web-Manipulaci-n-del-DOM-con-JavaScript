@@ -3,22 +3,27 @@
       const btn = document.querySelector("[data-form-btn]")
 
       const checkIcon = () => {
-            const icons = document.getElementsByClassName("far fa-check-square icon")
-            for (let index = 0; index < icons.length; index++) {
-                  const element = icons[index]
-                 
-                  element.addEventListener("click", () => {
-                        element.classList.toggle("green")
-                        console.log(element)
+            // const icons = document.getElementsByClassName("far fa-check-square icon")
+            const icons = document.querySelectorAll(".far.fa-check-square")
+            let enter = false;
+            icons.forEach((icon) => {
+                  icon.addEventListener("click", (e) => {
+                        if (!enter) {
+                              e.target.classList.add("green")
+                              enter = true;
+                        } else {
+                              e.target.classList.remove("green")
+                              enter = false;
+                        }
                   })
+            })
 
-            }
       }
+      
       const deleteTask = () => {
             const icons = document.getElementsByClassName("fas fa-trash-alt trashIcon icon")
             for (let index = 0; index < icons.length; index++) {
                   const element = icons[index]
-                 
                   element.addEventListener("click", (e) => {
                         const parent = (e.target.parentElement)
                         parent.remove();
