@@ -15,7 +15,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <script src="JS/main.js" defer></script>
   </head>
   <body>
     <main>
@@ -29,19 +30,17 @@
               placeholder="Nombre de la tarea"
               class="inputForm"
               autocomplete="off"
+              data-form-input
             />
-            <button type="submit" class="btnCreate">
+                                                    <!-- data atribute -->
+            <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
           </form>
         </div>
-        <ul class="cardsList">
-          <li class="card">
-            <div>
-              <i class="far fa-check-square icon"></i>
-              <span class="task">Hacer curso de DOM</span>
-            </div>
-            <i class="fas fa-trash-alt trashIcon icon"></i>
+        <ul class="cardsList" data-list>
+          <!-- <li class="card" data-task>
+
           </li>
           <li class="card">
             <div>
@@ -49,7 +48,7 @@
               <span class="task">Hacer curso de git</span>
             </div>
             <i class="fas fa-trash-alt trashIcon icon"></i>
-          </li>
+          </li> -->
         </ul>
       </div>
     </main>
